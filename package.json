@@ -1,0 +1,30 @@
+{
+  "name": "ticketbox-monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo for the TicketBox SaaS project",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "npm run dev -w apps/ticketbox-frontend",
+    "dev:backend": "npm run start:dev -w apps/ticketbox-backend",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "build:frontend": "npm run build -w apps/ticketbox-frontend",
+    "build:backend": "npm run build -w apps/ticketbox-backend",
+    "build": "npm run build:frontend && npm run build:backend",
+    "start:frontend": "npm run start -w apps/ticketbox-frontend",
+    "start:backend": "npm run start:prod -w apps/ticketbox-backend",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "@swc/helpers": "^0.5.17"
+  }
+}

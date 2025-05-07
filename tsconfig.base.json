@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es2020", // Hoặc phiên bản ES bạn muốn target
+    "module": "commonjs", // Hoặc "esnext" tùy thuộc vào từng package
+    "lib": ["es2020", "dom"], // Thêm "dom" nếu package đó có tương tác với DOM
+    "declaration": true, // Tạo file .d.ts
+    "declarationMap": true, // Tạo sourcemap cho file .d.ts
+    "sourceMap": true, // Tạo sourcemap cho file .js
+    "composite": true, // Quan trọng cho project references trong monorepo
+    "incremental": true, // Cho phép build tăng dần
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "baseUrl": ".", // Giúp cho path aliases
+    "paths": {
+      // Bạn có thể định nghĩa path aliases ở đây để import các package trong monorepo
+      // Ví dụ, nếu bạn có packages/common-types:
+      // "@ticketbox/common-types": ["packages/common-types/src"]
+    },
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true, // Quan trọng cho Next.js
+
+    /* Advanced Options */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": ["node_modules", "**/dist", "**/.turbo"]
+}
